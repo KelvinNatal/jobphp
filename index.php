@@ -10,10 +10,8 @@ include_once 'Classes/functions.php';
 include_once 'Classes/book.php';
 include_once 'Classes/furniture.php';
 
-// Hide errors ---->
-
-ini_set('display_errors', 0 );
-error_reporting(0);
+/*ini_set('display_errors', 0 );
+error_reporting(0);*/
 
 $objPdd = new Dvd();
 $objPdb = new Book();

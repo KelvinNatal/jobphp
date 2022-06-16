@@ -60,7 +60,7 @@ class Functions extends Products{
            $cst = $this->con->connect()->prepare("SELECT pds.id, pds.sku, pds.name, pds.price, dv.size, fnt.height, fnt.width, fnt.length, bo.weight FROM products pds 
                                                   LEFT JOIN dvd AS dv ON dv.product_id=pds.id 
                                                   LEFT JOIN book AS bo ON bo.product_id=pds.id 
-                                                  LEFT JOIN furniture AS fnt ON fnt.product_id=pds.id
+                                                  INNER JOIN furniture AS fnt ON fnt.product_id=pds.id
                                                   ORDER BY pds.id DESC");
            $cst->execute();
            
