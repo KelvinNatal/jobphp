@@ -4,19 +4,12 @@ header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Headers: *");
 header("Access-Control-Allow-Methods: GET, POST, DELETE");
 
-include_once 'Classes/products.php';
-include_once 'Classes/dvd.php';
 include_once 'Classes/functions.php';
-include_once 'Classes/book.php';
-include_once 'Classes/furniture.php';
 
 /*ini_set('display_errors', 0 );
 error_reporting(0);*/
 
-$objPdd = new Dvd();
-$objPdb = new Book();
 $objPdt = new Functions();
-$objPdf = new Furniture();
 
 
 $method = $_SERVER['REQUEST_METHOD'];

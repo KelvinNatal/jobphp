@@ -1,5 +1,7 @@
 <?php
 
+require_once 'products.php';
+
 class Book extends Products {       
 
     protected $weight;

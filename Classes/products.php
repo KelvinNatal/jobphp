@@ -1,7 +1,6 @@
 <?php
 
-require_once 'connection.php';
-
+require_once 'Connec/connection.php';
  abstract class Products {
 
     protected $id;

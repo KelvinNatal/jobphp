@@ -1,5 +1,6 @@
 <?php
 
+require_once 'products.php';
 class Furniture extends Products{       
 
     protected $height;
