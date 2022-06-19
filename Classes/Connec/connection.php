@@ -9,10 +9,11 @@ class Connection {
 
     public function __construct()
     {
-        $this->host = "us-cdbr-east-05.cleardb.net";
-        $this->dbname = "heroku_af82a28c15e044b";
-        $this->user = "bc7d0502027993";
-        $this->pass = "e70383ad";
+        $this->host = "localhost";
+        $this->dbname = "product_table";
+        $this->user = "root";
+        $this->pass = "";
+
     }
 
     public function connect(){

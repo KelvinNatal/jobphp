@@ -27,6 +27,7 @@ class Book extends Products {
 
         try{
 
+        if($weight != 0){
         $objFunc = new BOOK();
 
         $objFunc->setWeight($weight);
@@ -36,6 +37,7 @@ class Book extends Products {
         $cstD->bindParam(":weight", $objFunc->getWeight());
         $cstD->bindParam(":product_id", $objFunc->getProduct_id());
         $cstD->execute();
+        }
   
         }catch(PDOException $ex){
             return 'error '.$ex->getMessage();

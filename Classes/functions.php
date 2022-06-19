@@ -36,14 +36,9 @@ class Functions extends Products{
                 
                 $last_id = $this->con->connect()->lastInsertId();
 
-                if($size > 0){
-                    $objDVD->queryInsert($size, $last_id);       
-                }else if($weigth > 0){
-                    $objBook->queryInsert($weigth, $last_id);
-                }else{
-                    $objFurni->queryInsert($height, $width, $length, $last_id);
-                }
-
+                $objDVD->queryInsert($size, $last_id);      
+                $objBook->queryInsert($weigth, $last_id);
+                $objFurni->queryInsert($height, $width, $length, $last_id);             
     
             }else{
                 $response = [
@@ -70,7 +65,6 @@ class Functions extends Products{
            $cst->execute();
            
         if(($cst)){
-
             while($row_product = $cst->fetch(PDO::FETCH_ASSOC)){
             extract($row_product);
             $list_products["records"][$id] = [

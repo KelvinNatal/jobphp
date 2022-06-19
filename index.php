@@ -6,8 +6,7 @@ header("Access-Control-Allow-Methods: GET, POST, DELETE");
 
 include_once 'Classes/functions.php';
 
-ini_set('display_errors', 0 );
-error_reporting(0);
+
 
 $objPdt = new Functions();
 
