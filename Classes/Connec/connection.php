@@ -1,3 +1,5 @@
+mysql://bc7d0502027993:e70383ad@us-cdbr-east-05.cleardb.net/heroku_af82a28c15e044b?reconnect=true
+
 <?php
 
 class Connection {
@@ -9,10 +11,10 @@ class Connection {
 
     public function __construct()
     {
-        $this->host = "localhost";
-        $this->dbname = "product_table";
-        $this->user = "root";
-        $this->pass = "";
+        $this->host = "us-cdbr-east-05.cleardb.net";
+        $this->dbname = "heroku_af82a28c15e044b";
+        $this->user = "bc7d0502027993";
+        $this->pass = "e70383ad";
 
     }
 
