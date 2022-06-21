@@ -25,8 +25,7 @@ class Dvd extends Products {
     public function queryInsert($size, $last_id){   
 
         try{
-
-        if($size != 0){
+       
             $objFunc = new DVD();
 
             $objFunc->setSize($size);  
@@ -36,7 +35,7 @@ class Dvd extends Products {
             $cstD->bindParam(":size", $objFunc->getSize());
             $cstD->bindParam(":product_id", $objFunc->getProduct_id());
             $cstD->execute();
-        }
+        
             
         }catch(PDOException $ex){
             return 'error '.$ex->getMessage();

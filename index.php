@@ -6,10 +6,7 @@ header("Access-Control-Allow-Methods: GET, POST, DELETE");
 
 include_once 'Classes/functions.php';
 
-
-
 $objPdt = new Functions();
-
 
 $method = $_SERVER['REQUEST_METHOD'];
 

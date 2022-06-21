@@ -44,7 +44,6 @@ class Furniture extends Products{
 
         try{
 
-        if($height != 0){
         $objFunc = new Furniture();
 
         $objFunc->setHeight($height);
@@ -59,7 +58,6 @@ class Furniture extends Products{
         $cstD->bindParam(":length", $objFunc->getLength());
         $cstD->bindParam(":product_id", $objFunc->getProduct_id());
         $cstD->execute();
-        }
 
         }catch(PDOException $ex){
             return 'error '.$ex->getMessage();
