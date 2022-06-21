@@ -1,5 +1,3 @@
-mysql://bc7d0502027993:e70383ad@us-cdbr-east-05.cleardb.net/heroku_af82a28c15e044b?reconnect=true
-
 <?php
 
 class Connection {
