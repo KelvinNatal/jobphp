@@ -1,8 +1,6 @@
 <?php
 
 require_once 'products.php';
-
-
 class Dvd extends Products {       
 
     protected $size;
