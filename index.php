@@ -4,16 +4,19 @@ header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Headers: *");
 header("Access-Control-Allow-Methods: GET, POST, DELETE");
 
-include_once 'Classes/functions.php';
+include_once 'Classes/products.php';
+include_once 'Classes/furniture.php';
+include_once 'Classes/dvd.php';
+include_once 'Classes/book.php';
 
-$objPdt = new Functions();
+$objPdp = new Dvd();
 
 $method = $_SERVER['REQUEST_METHOD'];
 
 switch($method){
     
     case "GET":
-        $objPdt->querySelect();
+        $objPdp->querySelect();
     break;    
 
     case "POST":  
@@ -29,7 +32,9 @@ switch($method){
         $length = $data['product']['length']; 
         $weight = $data['product']['weight'];
 
-        $objPdt->queryInsert($sku, $name, $price, $size, $height, $width, $length, $weight);
+        $furniture = [$height, $width, $length];
+                 
+        $objPdp->productBase($sku, $name, $price, $size, $weight, $furniture);
                 
     break; 
 
@@ -38,9 +43,10 @@ switch($method){
         $pat = explode(',', $id);
         $data = implode(',', $pat);
 
-        $objPdt->queryDelete($data);
+        $objPdp->queryDelete($data);
     break;
     }
+
 
 ?>
 

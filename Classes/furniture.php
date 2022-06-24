@@ -8,55 +8,54 @@ class Furniture extends Products{
     protected $length;
     protected $product_id;
 
-    public function setHeight($h){
+    protected function setHeight($h){
         $this->height = $h;
     }
 
-    public function getHeight(){
+    protected function getHeight(){
         return $this->height;
     }
 
-    public function setWidth($w){
+    protected function setWidth($w){
         $this->width = $w;
     }
 
-    public function getWidth(){
+    protected function getWidth(){
         return $this->width;
     }
 
-    public function setLength($l){
+    protected function setLength($l){
         $this->length = $l;
     }
 
-    public function getLength(){
+    protected function getLength(){
         return $this->length;
     }
 
-    public function setProduct_id($pi){
+    protected function setProduct_id($pi){
         $this->product_id = $pi;
     }
 
-    public function getProduct_id(){
+    protected function getProduct_id(){
         return $this->product_id;
     }
 
-    public function queryInsert($height, $width, $length, $last_id){   
-
+    protected function queryInsert($furniture, $last_id){
         try{
 
         $objFunc = new Furniture();
 
-        $objFunc->setHeight($height);
-        $objFunc->setWidth($width);
-        $objFunc->setLength($length);
+        $objFunc->setHeight($furniture[0]);
+        $objFunc->setWidth($furniture[1]);
+        $objFunc->setLength($furniture[2]);
             
         $objFunc->setProduct_id($last_id);
 
         $cstD = $this->con->connect()->prepare("INSERT INTO furniture (height, width, length, product_id) VALUES (:height, :width, :length, :product_id)");
-        $cstD->bindParam(":height", $objFunc->getHeight());
-        $cstD->bindParam(":width", $objFunc->getWidth());
-        $cstD->bindParam(":length", $objFunc->getLength());
-        $cstD->bindParam(":product_id", $objFunc->getProduct_id());
+        $cstD->bindValue(":height", $objFunc->getHeight());
+        $cstD->bindValue(":width", $objFunc->getWidth());
+        $cstD->bindValue(":length", $objFunc->getLength());
+        $cstD->bindValue(":product_id", $objFunc->getProduct_id());
         $cstD->execute();
 
         }catch(PDOException $ex){
@@ -65,7 +64,10 @@ class Furniture extends Products{
            
     }
 
+    
+
 }
+
 
 
 ?>

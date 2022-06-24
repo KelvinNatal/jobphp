@@ -7,23 +7,23 @@ class Book extends Products {
     protected $weight;
     protected $product_id;
 
-    public function setWeight($w){
+    protected function setWeight($w){
         $this->weight = $w;
     }
 
-    public function getWeight(){
+    protected function getWeight(){
         return $this->weight;
     }
 
-    public function setProduct_id($pi){
+    protected function setProduct_id($pi){
         $this->product_id = $pi;
     }
 
-    public function getProduct_id(){
+    protected function getProduct_id(){
         return $this->product_id;
     }
 
-    public function queryInsert($weight, $last_id){   
+    protected function queryInsert($weight, $last_id){   
 
         try{
             
@@ -33,8 +33,8 @@ class Book extends Products {
         $objFunc->setProduct_id($last_id);
 
         $cstD = $this->con->connect()->prepare("INSERT INTO book (weight, product_id) VALUES (:weight, :product_id)");
-        $cstD->bindParam(":weight", $objFunc->getWeight());
-        $cstD->bindParam(":product_id", $objFunc->getProduct_id());
+        $cstD->bindValue(":weight", $objFunc->getWeight());
+        $cstD->bindValue(":product_id", $objFunc->getProduct_id());
         $cstD->execute();
   
         }catch(PDOException $ex){
