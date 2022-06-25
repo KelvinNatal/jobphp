@@ -13,7 +13,6 @@ class Connection {
         $this->dbname = "heroku_af82a28c15e044b";
         $this->user = "bc7d0502027993";
         $this->pass = "e70383ad";
-
     }
 
     public function connect(){
